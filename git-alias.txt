@@ -1,0 +1,5 @@
+alias gc='git add . & gitmoji commit'
+alias git-align-master='git fetch --prune && git checkout master && git pull && git checkout -'
+alias git-clean='git for-each-ref --format "%(refname:short)" refs/heads | grep -v "master\|main" | xargs git branch -D'
+alias git-push-tag='f(){ git tag $1 && git push origin $1;  unset -f f; };'
+alias git-squash='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
